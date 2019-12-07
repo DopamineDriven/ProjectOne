@@ -45,7 +45,7 @@ let signFinder = function (day, month) {
             console.log(data);
             }
        });
-       //make a .then call to get the description from the returned ajax call and populate a corresponding html div class/id
+       //make a .then call to get the description from the returned ajax call and populate a corresponding html div class///id
     }
 }
 
