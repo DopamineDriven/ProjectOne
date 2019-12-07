@@ -14,4 +14,4 @@ $("#submitBtn").on("click", function(event) {
 
  console.log(queryURL);
 })
-  
+   
