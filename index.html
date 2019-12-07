@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-  <section class="section">
+  <section class="section is-fluid">
     <div class="container">
       <h1 class="title">
         Tell me ur bday
@@ -17,7 +17,10 @@
       <p class="subtitle">
         It is time to know things abt yourself.
       </p>
-      <div class="parent">
+      
+      <div class="columns is-mobile">
+        <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+          <div class="parent">
             <div class="control">
               <div class="select is-primary">
                 <select>
@@ -38,87 +41,19 @@
             </div>
           </div>
         </div>
+        </div>
+        <div class="column">2</div>
+        <div class="column">3</div>
+        <div class="column">4</div>
+      </div>
 
-        <div class="dropdown is-active">
-          <div class="dropdown-trigger">
-            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-              <span>Dropdown button</span>
-              <span class="icon is-small">
-                <i class="fas fa-angle-down" aria-hidden="true"></i>
-              </span>
-            </button>
-          </div>
-          <div class="dropdown-menu" id="dropdown-menu" role="menu">
-            <div class="dropdown-content">
-              <a href="#" class="dropdown-item">
-                Dropdown item
-              </a>
-              <a class="dropdown-item">
-                Other dropdown item
-              </a>
-              <a href="#" class="dropdown-item is-active">
-                Active dropdown item
-              </a>
-              <a href="#" class="dropdown-item">
-                Other dropdown item
-              </a>
-              <hr class="dropdown-divider">
-              <a href="#" class="dropdown-item">
-                With a divider
-              </a>
-            </div>
-          </div>
+
+
+        <div class="buttons">
+            <button class="button is-link is-light">Let's find out what shit went down on your bday</button>
         </div>
 
-          <div class="buttons">
-                <button class="button is-link is-light">Let's find out what shit went down on your bday</button>
-              </div>
-
-      <div class="tile is-ancestor">
-            <div class="tile is-vertical is-8">
-              <div class="tile">
-                <div class="tile is-parent is-vertical">
-                  <article class="tile is-child notification is-primary">
-                    <p class="title">Vertical...</p>
-                    <p class="subtitle">Top tile</p>
-                  </article>
-                  <article class="tile is-child notification is-warning">
-                    <p class="title">...tiles</p>
-                    <p class="subtitle">Bottom tile</p>
-                  </article>
-                </div>
-                <div class="tile is-parent">
-                  <article class="tile is-child notification is-info">
-                    <p class="title">Middle tile</p>
-                    <p class="subtitle">With an image</p>
-                    <figure class="image is-4by3">
-                      <img src="https://bulma.io/images/placeholders/640x480.png">
-                    </figure>
-                  </article>
-                </div>
-              </div>
-              <div class="tile is-parent">
-                <article class="tile is-child notification is-danger">
-                  <p class="title">Wide tile</p>
-                  <p class="subtitle">Aligned with the right tile</p>
-                  <div class="content">
-                    <!-- Content -->
-                  </div>
-                </article>
-              </div>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child notification is-success">
-                <div class="content">
-                  <p class="title">Tall tile</p>
-                  <p class="subtitle">With even more content</p>
-                  <div class="content">
-                    <!-- Content -->
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
+      
 
     </div>
   </section>
