@@ -26,6 +26,12 @@ $.ajax({
     console.log(response);
 });
 
-});
+    // access response object data
+
+    
+
+    // append data to html cards
+
+}); // end submit button click event
 
 
