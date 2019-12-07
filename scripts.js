@@ -23,14 +23,25 @@ $.ajax({
     url: queryURL,
     method: "GET"
 }).then(function(response) {
-    console.log(response);
-});
-
+    console.log(response); 
     // access response object data
+for (let index = 0; index < response.length; index++) {
+    // card text
+let cardText = response.events[i].text;
+console.log(cardText);
+}
 
-    
+        
+
+    // card year
+
+    // card thumbnail 
+
+
 
     // append data to html cards
+
+}); // end ajax call
 
 }); // end submit button click event
 
