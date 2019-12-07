@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Horoscope Test Run</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+
+Enter Birthdate Here: <input id="enterBirth"></input>
+
+<button id="submitBtn">Submit</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    
+<script type="text/javascript">
+
+var queryURl = 'https://aztro.sameerkumar.website/?sign=sign&day=day>';
+        
+var enterBirth = $("#enterBirth"); 
+    
+var submitBtn = $("#submitBtn"); 
+
+submitBtn.on("click", function() {
+    
+var userInput = enterBirth.val(); 
+
+    $.ajax({
+     type:'POST',
+     url:"https://aztro.sameerkumar.website?sign=" + userInput + "&day=today", 
+     success:function(data){
+     console.log(data);
+     }
+    });
+
+})
+//need one for each horoscope: Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius and Pisces
+//https://aztro.sameerkumar.website/?sign=aries&day=today
+//
+
+
+</script> 
