@@ -31,13 +31,16 @@ for (let index = 0; index < response.events.length; index++) {
 // card text
     let cardText = response.events[index].text;
     console.log(cardText);
+    $("#text").text(cardText);
 // card year
     let cardYear = response.events[index].year;
     console.log(cardYear);
+    $("#year").text(cardYear);
 // card thumbnail
     let cardThumbnail = response.events[index].pages[0].originalimage.source;
-    console.log(cardThumbnail); 
-// append data to html cards
+    console.log(cardThumbnail);
+    $("#thumbnail").attr("src",cardThumbnail);
+
 
 }
 
