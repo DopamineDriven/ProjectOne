@@ -1,6 +1,6 @@
 console.log("Hello!");
 
-//submit button click event
+// submit button click event
 
 // return user input birthday
 $("#submitBtn").on("click", function(event) {
@@ -13,7 +13,7 @@ $("#submitBtn").on("click", function(event) {
     let birthdayDay = moment(birthdayInput, "MM-DD-YY").format("DD");
     
 // append variables to Wikipedia queryURL search 
- var queryURL = "https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/" + birthdayMonth + "/" + birthdayDay;
+ var queryURL = "https://en.wikipedia.org/api/rest_v1/feed/onthisday/births/" + birthdayMonth + "/" + birthdayDay;
 
 // check queryURL
  console.log(queryURL);
@@ -25,19 +25,18 @@ $.ajax({
 }).then(function(response) {
     console.log(response); 
     
-// access response object data
+// response object data for loop
 for (let index = 0; index < 3; index++) {
-    
 // card text
-    let cardText = response.events[index].text;
+    let cardText = response.births[index].text;
     console.log(cardText);
     $("#text").text(cardText);
 // card year
-    let cardYear = response.events[index].year;
+    let cardYear = response.births[index].year;
     console.log(cardYear);
     $("#year").text(cardYear);
 // card thumbnail
-    let cardThumbnail = response.events[index].pages[0].originalimage.source;
+    let cardThumbnail = response.births[index].pages[0].originalimage.source;
     console.log(cardThumbnail);
     $("#thumbnail").attr("src",cardThumbnail);
 
