@@ -35,9 +35,8 @@ for (let index = 0; index < response.events.length; index++) {
     let cardYear = response.events[index].year;
     console.log(cardYear);
 // card thumbnail
-    let cardThumbnail = response.events[index].pages.thumbnail.source.val();
+    let cardThumbnail = response.events[index].pages[0].originalimage.source;
     console.log(cardThumbnail); 
-
 // append data to html cards
 
 }
