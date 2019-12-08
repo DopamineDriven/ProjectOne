@@ -26,7 +26,7 @@ $.ajax({
     console.log(response); 
     
 // access response object data
-for (let index = 0; index < response.events.length; index++) {
+for (let index = 0; index < 3; index++) {
     
 // card text
     let cardText = response.events[index].text;
@@ -40,7 +40,6 @@ for (let index = 0; index < response.events.length; index++) {
     let cardThumbnail = response.events[index].pages[0].originalimage.source;
     console.log(cardThumbnail);
     $("#thumbnail").attr("src",cardThumbnail);
-
 
 }
 
