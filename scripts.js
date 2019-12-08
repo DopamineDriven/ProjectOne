@@ -24,7 +24,7 @@ $.ajax({
     method: "GET"
 }).then(function(response) {
     console.log(response); 
-    
+
 // response object data for loop
 for (let index = 0; index < 3; index++) {
 // card text
@@ -39,11 +39,16 @@ for (let index = 0; index < 3; index++) {
     let cardThumbnail = response.births[index].pages[0].originalimage.source;
     console.log(cardThumbnail);
     $("#thumbnail").attr("src",cardThumbnail);
-
 }
 
         
-
+/*
+// for each loop to create html objects    
+    response.births.forEach(function (item){
+        let cardText = response.births[0];
+        console.log(cardText);
+});
+*/
     
 
 }); // end ajax call
