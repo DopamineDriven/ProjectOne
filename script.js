@@ -8,7 +8,6 @@ $(day).on("change", function(){
     console.log(dayValue);
     if (!isNaN(dayValue) && !isNaN(monthValue)) {
         let sign=signFinder(dayValue, monthValue)
-        console.log(sign)
         }
 })
 
@@ -17,7 +16,6 @@ $(month).on("change", function(){
     console.log(monthValue)
     if (!isNaN(dayValue) && !isNaN(monthValue)) {
     let sign=signFinder(dayValue, monthValue)
-    console.log(sign)
     }
 })
 
@@ -28,7 +26,7 @@ let signFinder = function (day, month) {
     for (let i=0; i<signs.length; i++) {
         if (signs[i].startDate<= monthDay && monthDay <= signs[i].endDate) {
             starSign=signs[i].sign
-            console.log("Sign "+signs[i].sign)
+            console.log(`Sign ${signs[i].sign}`)
             $("#star-sign").text(starSign)
             break;
         }
@@ -40,13 +38,13 @@ let signFinder = function (day, month) {
 
         $.ajax({
             type:'POST',
-            url:"https://aztro.sameerkumar.website?sign="+ starSign+ "&day=today",
+            url:`https://aztro.sameerkumar.website?sign=${starSign}&day=today`,
             success:function(data){
             console.log(data);
             }
        }).then(function (data) {
-           $(".date-range").text(`Date Range: ${data.date_range}`);
-           $(".description").text(`Description: ${data.description}`);
+           $(".date-range").text(`${data.date_range}`);
+           $(".description").text(`${data.description}`);
            $(".compatibility").text(`Compatibility: ${data.compatibility}`);
            $(".mood").text(`Mood: ${data.mood}`);
            $(".color").text(`Color: ${data.color}`);
