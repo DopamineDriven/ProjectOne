@@ -44,7 +44,13 @@ let signFinder = function (day, month) {
             success:function(data){
             console.log(data);
             }
-       });
+       }).then(function (data) {
+           $(".date-range").text(`Date Range: ${data.date_range}`);
+           $(".description").text(`Description: ${data.description}`);
+           $(".compatibility").text(`Compatibility: ${data.compatibility}`);
+           $(".mood").text(`Mood: ${data.mood}`);
+           $(".color").text(`Color: ${data.color}`);
+       })
        //make a .then call to get the description from the returned ajax call and populate a corresponding html div class///id
     }
 }
