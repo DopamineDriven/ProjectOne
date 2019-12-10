@@ -26,27 +26,27 @@ let signFinder = function (day, month) {
     let starSign;
     
 // append variables to Wikipedia queryURL search 
- var queryURL = "https://en.wikipedia.org/api/rest_v1/feed/onthisday/births/" + monthDay;
+ var queryURLWikipedia = "https://en.wikipedia.org/api/rest_v1/feed/onthisday/births/" + monthDay;
 
 // check queryURL
- console.log(queryURL);
+ console.log(queryURLWikipedia);
 
 // return response object data to card
 $.ajax({
-    url: queryURL,
+    url: queryURLWikipedia,
     method: "GET"
-}).then(function(response) {
-    console.log(response); 
+}).then(function(Wikipediaresponse) {
+    console.log(Wikipediaresponse); 
 // card text
-    let cardText = response.births[2].text;
+    let cardText = Wikipediaresponse.births[2].text;
     console.log(cardText);
     $("#text").text(cardText);
 // card year
-    let cardYear = response.births[2].year;
+    let cardYear = Wikipediaresponse.births[2].year;
     console.log(cardYear);
     $("#year").text(cardYear);
 // card thumbnail
-    let cardThumbnail = response.births[2].pages[0].originalimage.source;
+    let cardThumbnail = Wikipediaresponse.births[2].pages[0].originalimage.source;
     console.log(cardThumbnail);
     $("#thumbnail").attr("src",cardThumbnail);
 }); // end ajax call 
