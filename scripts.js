@@ -26,32 +26,21 @@ $.ajax({
     console.log(response); 
 
 // response object data for loop
-for (let index = 0; index < 3; index++) {
+
 // card text
-    let cardText = response.births[index].text;
+    let cardText = response.births[2].text;
     console.log(cardText);
     $("#text").text(cardText);
 // card year
-    let cardYear = response.births[index].year;
+    let cardYear = response.births[2].year;
     console.log(cardYear);
     $("#year").text(cardYear);
 // card thumbnail
-    let cardThumbnail = response.births[index].pages[0].originalimage.source;
+    let cardThumbnail = response.births[2].pages[0].originalimage.source;
     console.log(cardThumbnail);
     $("#thumbnail").attr("src",cardThumbnail);
 }
-
-        
-/*
-// for each loop to create html objects    
-    response.births.forEach(function (item){
-        let cardText = response.births[0];
-        console.log(cardText);
-});
-*/
-    
-
-}); // end ajax call
+); // end ajax call
 
 }); // end submit button click event
 
