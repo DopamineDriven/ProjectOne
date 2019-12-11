@@ -47,11 +47,21 @@ $.ajax({
     $("#year").text(cardYear);
 // card thumbnail
     let cardThumbnail = Wikipediaresponse.births[2].pages[0].originalimage.source;
-    console.log(cardThumbnail);
-    $("#thumbnail").attr("src",cardThumbnail);
+    if (Wikipediaresponse.births[2].pages[0].originalimage.source) {
+      console.log(cardThumbnail);
+    $("#thumbnail").attr("src" , cardThumbnail);  
+    } else {
+        console.log("No Wikipedia image!");
+        $("#thumbnail").attr("src", "assets/giraffe-error-meme.jpeg");
+    }
+    
+// no image test case : february 3 if there is a 
+    
+
+
 }); // end ajax call 
 
-// horoscope js 
+// horoscope js from developer branch
 for (let i=0; i<signs.length; i++) {
     if (signs[i].startDate<= monthDay && monthDay <= signs[i].endDate) {
         starSign=signs[i].sign
