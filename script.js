@@ -57,9 +57,6 @@ const signs =[{
     endDate: "03/20"
 }];
 
-
-
-
 $(day).on("change", function(){
     dayValue=this.value;
     console.log(dayValue);
@@ -201,7 +198,6 @@ var queryURLWikipedia = "https://en.wikipedia.org/api/rest_v1/feed/onthisday/bir
         console.log(cardThumbnail);
         $("#thumbnail").attr("src",cardThumbnail);
     }); // end ajax call 
-
 
 
 
