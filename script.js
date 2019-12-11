@@ -112,7 +112,39 @@ if (media != "image") {
   $(".card-content2").text(response.explanation);
 });
 // --------------------------------------------------------------
-    for (let i=0; i<signs.length; i++) {
+
+//make a .then call to get the description from the returned ajax call and populate a corresponding html div class///id
+    
+
+    // append variables to Wikipedia queryURL search 
+    var queryURLWikipedia = "https://en.wikipedia.org/api/rest_v1/feed/onthisday/births/" + monthDay;
+
+    // check queryURL
+    console.log(queryURLWikipedia);
+
+    // return response object data to card
+    $.ajax({
+        url: queryURLWikipedia,
+        method: "GET"
+    }).then(function(Wikipediaresponse) {
+        console.log(Wikipediaresponse); 
+    // card text
+        let cardText = Wikipediaresponse.births[2].text;
+        console.log(cardText);
+        $("#text").text(cardText);
+        
+    // card year
+        let cardYear = Wikipediaresponse.births[2].year;
+        console.log(cardYear);
+        $("#year").text(cardYear);
+    // card thumbnail
+        let cardThumbnail = Wikipediaresponse.births[2].pages[0].originalimage.source;
+        console.log(cardThumbnail);
+        $("#thumbnail1").attr("src",cardThumbnail);
+    }); // end ajax call 
+}
+
+for (let i=0; i<signs.length; i++) {
         if (signs[i].startDate<= monthDay && monthDay <= signs[i].endDate) {
             starSign=signs[i].sign
             console.log(`Sign ${signs[i].sign}`)
@@ -138,8 +170,10 @@ if (media != "image") {
            $(".mood").text(`Mood: ${data.mood}`);
            $(".color").text(`Color: ${data.color}`);
        })
+       
+    }   
        //make a .then call to get the description from the returned ajax call and populate a corresponding html div class///id
-    }
+    
 
     // append variables to Wikipedia queryURL search 
 var queryURLWikipedia = "https://en.wikipedia.org/api/rest_v1/feed/onthisday/births/" + monthDay;
@@ -167,7 +201,7 @@ var queryURLWikipedia = "https://en.wikipedia.org/api/rest_v1/feed/onthisday/bir
         console.log(cardThumbnail);
         $("#thumbnail").attr("src",cardThumbnail);
     }); // end ajax call 
-}
+
 
 
 
